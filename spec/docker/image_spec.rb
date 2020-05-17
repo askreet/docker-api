@@ -433,11 +433,11 @@ describe Docker::Image do
 
       before do
         Docker.creds = nil
-        subject.create('fromImage' => 'tianon/true').remove
+        subject.create('fromImage' => 'docker.io/tianon/true').remove
       end
 
       it 'calls the block and passes build output' do
-        subject.create('fromImage' => 'tianon/true', &block)
+        subject.create('fromImage' => 'docker.io/tianon/true', &block)
         expect(create_output).to match(/Pulling.*tianon\/true/)
       end
     end
